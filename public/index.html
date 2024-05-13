@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce</title>
+    <style>
+        /* Center the title "Electro" */
+        header h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-top: 50px;
+        }
+
+        /* Style the navigation links */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #333; /* Background color for the navigation bar */
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            font-size: 24px;
+            color: #fff; /* Text color for the links */
+            text-decoration: none;
+            border: 2px solid #ccc; /* Border style for the links */
+            padding: 10px 20px;
+            border-radius: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #ccc; /* Background color on hover */
+            color: #008000; /* Text color on hover */
+        }
+
+        /* Add this CSS for the dropdown menu */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            border: 1px solid #ccc;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .dropdown-content a:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Electro</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Products</a>
+                    <div class="dropdown-content">
+                        <a href="products.html#mobile">Mobile Phone</a>
+                        <a href="products.html#computer">Computer</a>
+                        <a href="products.html#printer">Printer</a>
+                        <a href="products.html#camera">Digital Camera</a>
+                        <a href="products.html#refrigerator">Refrigerator</a>
+                        <a href="products.html#ips">IPS</a>
+                        <a href="products.html#ups">UPS</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Product sections go here -->
+    </main>
+
+    <footer>
+        <p  align="center">&copy; 2023 Electro</p>
+    </footer>
+
+    <script src="jquery.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

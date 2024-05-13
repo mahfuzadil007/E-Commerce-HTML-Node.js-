@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce</title>
+    <style>
+        /* Center the title "Electro" */
+        header h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-top: 50px;
+        }
+
+        /* Style the navigation links */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #333; /* Background color for the navigation bar */
+        }
+
+            nav ul li {
+                margin: 0 20px;
+            }
+
+                nav ul li a {
+                    font-size: 24px;
+                    color: #fff; /* Text color for the links */
+                    text-decoration: none;
+                    border: 2px solid #ccc; /* Border style for the links */
+                    padding: 10px 20px;
+                    border-radius: 10px;
+                    transition: background-color 0.3s, color 0.3s;
+                }
+
+                    nav ul li a:hover {
+                        background-color: #ccc; /* Background color on hover */
+                        color: #008000; /* Text color on hover */
+                    }
+
+        /* Add this CSS for the dropdown menu */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            border: 1px solid #ccc;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid #ccc;
+        }
+
+            .dropdown-content a:last-child {
+                border-bottom: none;
+            }
+        /* Add this CSS for the product items within each section */
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .product-item {
+            width: calc(30% - 20px); /* Adjust the width and margin as needed to fit your design */
+            margin-bottom: 20px;
+            text-align: center;
+            display: inline-block; /* Change from 'block' to 'inline-block' */
+            vertical-align: top; /* Align items at the top */
+        }
+
+            .product-item img {
+                max-width: 100%;
+                height: auto;
+            }
+
+        .product-name {
+            font-weight: bold;
+            display: block;
+        }
+
+        .product-price {
+            color: #666;
+        }
+
+        /* Add to Cart button styles */
+        .add-to-cart {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+            .add-to-cart:hover {
+                background-color: #0056b3;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Electro</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Products</a>
+                    <div class="dropdown-content">
+                        <a href="products.html#mobile">Mobile Phone</a>
+                        <a href="products.html#computer">Computer</a>
+                        <a href="products.html#printer">Printer</a>
+                        <a href="products.html#camera">Digital Camera</a>
+                        <a href="products.html#refrigerator">Refrigerator</a>
+                        <a href="products.html#ips">IPS</a>
+                        <a href="products.html#ups">UPS</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Product sections go here -->
+    </main>
+    <section class="product" id="mobile">
+        <h2>Mobile Phone</h2>
+        <div class="product-list">
+            <div class="product-item">
+                <img src="iphone14.jpg" alt="iPhone 14">
+                <span class="product-name">iPhone 14</span>
+                <span class="product-price">BDT 1,20,000</span>
+                <a href="cart.html?product=iPhone14" class="add-to-cart">Add to Cart</a>
+            </div>
+            <div class="product-item">
+                <img src="samsungs23.jpg" alt="Samsung Galaxy S23">
+                <span class="product-name">Samsung Galaxy S23</span>
+                <span class="product-price">BDT 1,08,000</span>
+                <a href="cart.html?product=SamsungGalaxyS23" class="add-to-cart">Add to Cart</a>
+            </div>
+            <div class="product-item">
+                <img src="oneplusnord.jpg" alt="OnePlus Nord">
+                <span class="product-name">OnePlus Nord</span>
+                <span class="product-price">BDT 84,000</span>
+                <a href="cart.html?product=OnePlusNord" class="add-to-cart">Add to Cart</a>
+            </div>
+            <!-- Add more mobile phones here -->
+        </div>
+    </section>
+
+    <!-- Computer section with names, prices, and Add to Cart buttons -->
+    <section class="product" id="computer">
+        <h2>Computer</h2>
+        <div class="product-list">
+            <div class="product-item">
+                <img src="dell7290.jpg" alt="Dell Latitude 7290">
+                <span class="product-name">Dell Latitude 7290</span>
+                <span class="product-price">BDT 80,000</span>
+                <a href="cart.html?product=DellLatitude7290" class="add-to-cart">Add to Cart</a>
+            </div>
+            <div class="product-item">
+                <img src="acerpredator.jpg" alt="Acer Predator Triton 500 SE (2021)">
+                <span class="product-name">Acer Predator Triton 500 SE (2021)</span>
+                <span class="product-price">BDT 1,49,000</span>
+                <a href="cart.html?product=AcerPredatorTriton500SE" class="add-to-cart">Add to Cart</a>
+            </div>
+            <div class="product-item">
+                <img src="lenovok14.jpg" alt="Lenovo K14 (14� Intel)">
+                <span class="product-name">Lenovo K14 (14� Intel)</span>
+                <span class="product-price">BDT 69,000</span>
+                <a href="cart.html?product=LenovoK14" class="add-to-cart">Add to Cart</a>
+            </div>
+            <!-- Add more computer models here -->
+        </div>
+    </section>
+
+    <!-- Digital Camera section with names, prices, and Add to Cart buttons -->
+    <section class="product" id="camera">
+        <h2>Digital Camera</h2>
+        <div class="product-list">
+            <div class="product-item">
+                <img src="nikonz7.jpg" alt="Nikon Z7">
+                <span class="product-name">Nikon Z7</span>
+                <span class="product-price">BDT 1,25,000</span>
+                <a href="cart.html?product=NikonZ7" class="add-to-cart">Add to Cart</a>
+            </div>
+            <div class="product-item">
+                <img src="canoneos5d.jpg" alt="Canon EOS 5D Mark IV">
+                <span class="product-name">Canon EOS 5D Mark IV</span>
+                <span class="product-price">BDT 1,60,000</span>
+                <a href="cart.html?product=CanonEOS5DMarkIV" class="add-to-cart">Add to Cart</a>
+            </div>
+            <div class="product-item">
+                <img src="sonya7iii.jpg" alt="Sony Alpha a7 III">
+                <span class="product-name">Sony Alpha a7 III</span>
+                <span class="product-price">BDT 1,10,000</span>
+                <a href="cart.html?product=SonyAlphaa7III" class="add-to-cart">Add to Cart</a>
+            </div>
+            <!-- Add more camera models here -->
+        </div>
+    </section>
+
+    <!-- Refrigerator section with names, prices, and Add to Cart buttons -->
+    <section class="product" id="refrigerator">
+        <h2>Refrigerator</h2>
+        <div class="product-list">
+            <div class="product-item">
+                <img src="lgfrenchdoor.jpg" alt="LG French Door Refrigerator">
+                <span class="product-name">LG French Door Refrigerator</span>
+                <span class="product-price">BDT 1,10,000</span>
+                <a href="cart.html?product=LGFrenchDoorRefrigerator" class="add-to-cart">Add to Cart</a>
+            </div>
+            <div class="product-item">
+                <img src="samsungsidebyside.jpg" alt="Samsung Side-by-Side Refrigerator">
+                <span class="product-name">Samsung Side-by-Side Refrigerator</span>
+                <span class="product-price">BDT 1,25,000</span>
+                <a href="cart.html?product=SamsungSidebySideRefrigerator" class="add-to-cart">Add to Cart</a>
+            </div>
+            <div class="product-item">
+                <img src="whirlpooltopfreezer.jpg" alt="Whirlpool Top Freezer Refrigerator">
+                <span class="product-name">Whirlpool Top Freezer Refrigerator</span>
+                <span class="product-price">BDT 75,000</span>
+                <a href="cart.html?product=WhirlpoolTopFreezerRefrigerator" class="add-to-cart">Add to Cart</a>
+            </div>
+            <!-- Add more refrigerator models here -->
+        </div>
+    </section>
+
+    <!-- IPS section with names, prices, and Add to Cart buttons -->
+    <section class="product" id="ips">
+        <h2>IPS</h2>
+        <div class="product-list">
+            <div class="product-item">
+                <img src="lg27ul850.jpg" alt="LG 27UL850-W 27 Inch">
+                <span class="product-name">LG 27UL850-W 27 Inch</span>
+                <span class="product-price">BDT 55,000</span>
+                <a href="cart.html?product=LGIps27Inch" class="add-to-cart">Add to Cart</a>
+            </div>
+            <div class="product-item">
+                <img src="dells2719dgf.jpg" alt="Dell S2719DGF 27 Inch">
+                <span class="product-name">Dell S2719DGF 27 Inch</span>
+                <span class="product-price">BDT 40,000</span>
+                <a href="cart.html?product=DellIps27Inch" class="add-to-cart">Add to Cart</a>
+            </div>
+            <div class="product-item">
+                <img src="acerxv273kp.jpg" alt="Acer XV273KP 27 Inch">
+                <span class="product-name">Acer XV273KP 27 Inch</span>
+                <span class="product-price">BDT 50,000</span>
+                <a href="cart.html?product=AcerIps27Inch" class="add-to-cart">Add to Cart</a>
+            </div>
+            <!-- Add more IPS models here -->
+        </div>
+    </section>
+
+    <!-- UPS section with names, prices, and Add to Cart buttons -->
+    <section class="product" id="ups">
+        <h2>UPS</h2>
+        <div class="product-list">
+            <div class="product-item">
+                <img src="apcbr1500g.jpg" alt="APC BR1500G Back-UPS Pro 1500VA">
+                <span class="product-name">APC BR1500G Back-UPS Pro 1500VA</span>
+                <span class="product-price">BDT 20,000</span>
+                <a href="cart.html?product=APCBR1500G" class="add-to-cart">Add to Cart</a>
+            </div>
+            <div class="product-item">
+                <img src="cyberpowercp1500avrlcd.jpg" alt="CyberPower CP1500AVRLCD Intelligent LCD UPS">
+                <span class="product-name">CyberPower CP1500AVRLCD Intelligent LCD UPS</span>
+                <span class="product-price">BDT 18,000</span>
+                <a href="cart.html?product=CyberPowerUPS" class="add-to-cart">Add to Cart</a>
+            </div>
+            <div class="product-item">
+                <img src="tripplite1000lcd.jpg" alt="Tripp Lite 1000VA 500W UPS">
+                <span class="product-name">Tripp Lite 1000VA 500W UPS</span>
+                <span class="product-price">BDT 16,000</span>
+                <a href="cart.html?product=TrippLiteUPS" class="add-to-cart">Add to Cart</a>
+            </div>
+            <!-- Add more UPS models here -->
+        </div>
+    </section>
+    <footer>
+        <p align="center">&copy; 2023 Electro</p>
+    </footer>
+
+    <script src="jquery.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

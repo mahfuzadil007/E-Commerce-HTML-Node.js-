@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - E-commerce</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add this CSS for the cart items */
+        .cart-items {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        .cart-item img {
+            max-width: 80px;
+            height: auto;
+        }
+
+        .cart-item-details {
+            flex-grow: 1;
+            margin-left: 20px;
+        }
+
+        .cart-item-name {
+            font-weight: bold;
+        }
+
+        .cart-item-remove {
+            color: #f00;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Electro</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Your Shopping Cart</h2>
+        <div class="cart-items">
+            <!-- Cart items will be dynamically added here based on user selections -->
+        </div>
+        <div id="cart-total">
+            <p>Total Items: <span id="total-items">0</span></p>
+            <p>Total Price: BDT <span id="total-price">0</span></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Electro - Your One-Stop Electronics Shop</p>
+    </footer>
+
+    <script>
+        // Function to update the cart
+        function updateCart() {
+            // Get the cart items from localStorage
+            const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+            // Get the cart items container
+            const cartContainer = document.querySelector(".cart-items");
+
+            // Get the total items and total price elements
+            const totalItemsElement = document.getElementById("total-items");
+            const totalPriceElement = document.getElementById("total-price");
+
+            // Initialize total items and total price
+            let totalItems = 0;
+            let totalPrice = 0;
+
+            // Clear the cart container
+            cartContainer.innerHTML = "";
+
+            // Loop through the cart items and display them
+            for (const item of cartItems) {
+                const cartItemElement = document.createElement("div");
+                cartItemElement.classList.add("cart-item");
+
+                // Display the product image, name, and price
+                cartItemElement.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <div class="cart-item-details">
+                        <p class="cart-item-name">${item.name}</p>
+                        <p>Price: BDT ${item.price}</p>
+                    </div>
+                    <span class="cart-item-remove" onclick="removeItem('${item.name}')">Remove</span>
+                `;
+
+                cartContainer.appendChild(cartItemElement);
+
+                // Update total items and total price
+                totalItems += 1;
+                totalPrice += item.price;
+            }
+
+            // Update the total items and total price elements
+            totalItemsElement.textContent = totalItems;
+            totalPriceElement.textContent = totalPrice;
+        }
+
+        // Function to remove an item from the cart
+        function removeItem(itemName) {
+            // Get the cart items from localStorage
+            let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+            // Remove the item with the matching name from the cart
+            cartItems = cartItems.filter((item) => item.name !== itemName);
+
+            // Update the cart in localStorage
+            localStorage.setItem("cart", JSON.stringify(cartItems));
+
+            // Update the cart on the page
+            updateCart();
+        }
+
+        // Call updateCart function when the page loads
+        updateCart();
+    </script>
+</body>
+</html>
